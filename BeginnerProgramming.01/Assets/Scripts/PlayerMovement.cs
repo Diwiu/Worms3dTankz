@@ -4,19 +4,33 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public CharacterController controller;
+    [SerializeField] private int playerIndex;
     
+    public CharacterController controller;
     public float speed = 12f;
+    public Camera cam;
 
     // Update is called once per frame
     void LateUpdate()
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        if (TurnManager.GetInstance().IsItPlayerTurn(playerIndex))
+        {
+            float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");
 
-        Vector3 move = transform.right * x + transform.forward * z;
+            Vector3 move = transform.right * x + transform.forward * z;
 
-        controller.Move(move * speed * Time.deltaTime);
+            controller.Move(move * speed * Time.deltaTime);
+
+            cam.enabled = true;
+            controller.enabled = true;
+        }
+        else
+        {
+            cam.enabled = false;
+            controller.enabled = false;
+        }
+          
         
     }
 }

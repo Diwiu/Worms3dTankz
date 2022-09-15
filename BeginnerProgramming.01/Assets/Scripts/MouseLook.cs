@@ -11,22 +11,26 @@ public class MouseLook : MonoBehaviour
     public float sensitivity = 5000;
     public Vector3 deltaMove;
     public float speed = 1;
+    [SerializeField] private int playerIndex;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
-        turn.y = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
+        if (TurnManager.GetInstance().IsItPlayerTurn(playerIndex))
+        {
+            float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
+            turn.y = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
 
 
 
-        xRotation -= turn.y;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+            xRotation -= turn.y;
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
 
-        transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
-        body.Rotate(Vector3.up * mouseX);
+            transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+            body.Rotate(Vector3.up * mouseX);
+        }
     }
 }
