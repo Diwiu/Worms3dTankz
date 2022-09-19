@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class TurnManager : MonoBehaviour
 {
+    
+    // make players visible in inspector
     private static TurnManager instance;
     [SerializeField] private PlayerTurn playerOne;
     [SerializeField] private PlayerTurn playerTwo;
@@ -61,6 +63,7 @@ public class TurnManager : MonoBehaviour
     public void ChangeTurn()
     {
         Debug.Log("switch");
+        // switches player and disables last player
         if (currentPlayer == playerOne)
         {
             playerOne.SwitchEnabled(false);

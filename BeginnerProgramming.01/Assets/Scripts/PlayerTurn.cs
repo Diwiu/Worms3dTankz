@@ -5,10 +5,14 @@ using UnityEngine;
 
 public class PlayerTurn : MonoBehaviour
 {
+    // get stuff from other scripts
+    
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private Cannon cannon;
     [SerializeField] private MouseLook mouseLook;
     [SerializeField] private Camera cam;
+    // enable / disable on inspector
+    
     public bool isEnabled;
 
 
