@@ -7,14 +7,24 @@ public class PlayerTurn : MonoBehaviour
 {
     // get stuff from other scripts
     
-    [SerializeField] private PlayerMovement playerMovement;
-    [SerializeField] private Cannon cannon;
-    [SerializeField] private MouseLook mouseLook;
-    [SerializeField] private Camera cam;
+    private PlayerMovement playerMovement;
+    private Cannon cannon;
+    private MouseLook mouseLook;
+    private Camera cam;
     // enable / disable on inspector
     
     public bool isEnabled;
 
+
+    public void Awake()
+    {
+        Debug.Log("Im Awake: "+ isEnabled);
+        cannon = GetComponentInChildren<Cannon>();
+        mouseLook = GetComponentInChildren<MouseLook>();
+        playerMovement = GetComponent<PlayerMovement>();
+        cam = GetComponentInChildren<Camera>();
+
+    }
 
     private void Update()
     {
@@ -23,7 +33,7 @@ public class PlayerTurn : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.G))
             {
                 cannon.Fire();
-                Debug.Log("emmy");
+                
             }
             playerMovement.movement();
             mouseLook.mouse();

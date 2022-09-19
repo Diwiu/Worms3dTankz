@@ -8,13 +8,12 @@ public class TurnManager : MonoBehaviour
     
     // make players visible in inspector
     private static TurnManager instance;
-    [SerializeField] private PlayerTurn playerOne;
-    [SerializeField] private PlayerTurn playerTwo;
+    [SerializeField] private List<PlayerTurn> playerTurns;
     [SerializeField] private float timeBetweenTurns;
 
-    private PlayerTurn currentPlayer;
+    private int playerIndex;
     public float turnDelay;
-    private bool waitingForNextTurn = true;
+    
 
     //public int currentPlayerIndex;
    // [SerializeField] private GameObject player1;
@@ -22,10 +21,11 @@ public class TurnManager : MonoBehaviour
 
     private void Awake()
     {
-        
 
             
-            currentPlayer = playerOne;
+            playerIndex = playerTurns.Count - 1;
+            ChangeTurn();
+            
             //playerOne.SwitchEnabled(false);
             //currentPlayerIndex = 1;
         
@@ -37,45 +37,59 @@ public class TurnManager : MonoBehaviour
 
     private void Update()
     {
-        if (waitingForNextTurn)
-        {
+       
             turnDelay += Time.deltaTime;
             if (turnDelay >= timeBetweenTurns)
             {
-                turnDelay = 0;
-                waitingForNextTurn = true;
                 ChangeTurn();
             }
-        }
+        
     }
     
 
-    //public bool IsItPlayerTurn(int index)
-    //{
-        //return index == currentPlayerIndex;
-    //}
-
-    //public static TurnManager GetInstance()
-    //{
-      //  return instance;
-    //}
+   
 
     public void ChangeTurn()
     {
-        Debug.Log("switch");
+        turnDelay = 0;
         // switches player and disables last player
-        if (currentPlayer == playerOne)
+        if (playerIndex == playerTurns.Count - 1)
         {
-            playerOne.SwitchEnabled(false);
-            currentPlayer = playerTwo;
+            playerIndex = 0;
         }
-        else if (currentPlayer == playerTwo)
+        else
         {
-            playerTwo.SwitchEnabled(false);
-            currentPlayer = playerOne;
+            playerIndex++;
+        }
+        
+        for(int i = 0; i < playerTurns.Count; i++)
+        {
+            var player = playerTurns[i];
+            if(i == playerIndex)
+            {
+                player.SwitchEnabled(true);
+            }
+            else
+            {
+                player.SwitchEnabled(false);
+            }
         }
 
-        currentPlayer.SwitchEnabled(true);
+
+
+        //currentPlayer.SwitchEnabled(false);
+        //if (currentplayer == playerone)
+        //{
+        //    debug.log("setting1");
+        //    currentplayer = playertwo;
+        //}
+        //else if (currentplayer == playertwo)
+        //{
+        //    debug.log("setting2");
+        //    currentplayer = playerone;
+        //}
+
+        //currentPlayer.SwitchEnabled(true);
 
         //player1Movement.SetActive();
 
