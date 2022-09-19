@@ -16,10 +16,10 @@ public class MouseLook : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
-    void Update()
+    public void mouse()
     {
-        if (TurnManager.GetInstance().IsItPlayerTurn(playerIndex))
-        {
+        
+        
             float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
             turn.y = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
 
@@ -31,7 +31,7 @@ public class MouseLook : MonoBehaviour
 
             transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
             body.Rotate(Vector3.up * mouseX);
-        }
+        
         
     }
 }

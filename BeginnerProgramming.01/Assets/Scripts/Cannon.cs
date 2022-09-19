@@ -11,12 +11,11 @@ public class Cannon : MonoBehaviour
     [SerializeField] private int playerIndex;
 
     // Update is called once per frame
-    void Update()
+    public void Fire()
     {
-        if (TurnManager.GetInstance().IsItPlayerTurn(playerIndex) && Input.GetKeyDown(KeyCode.G))
-        {
-            var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+        Debug.Log("hej");
+        var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
             bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
-        }
+        
     }
 }

@@ -10,11 +10,12 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 12f;
     public Camera cam;
 
+
     // Update is called once per frame
-    void LateUpdate()
+    public void movement()
     {
-        if (TurnManager.GetInstance().IsItPlayerTurn(playerIndex))
-        {
+       
+        
             float x = Input.GetAxis("Horizontal");
             float z = Input.GetAxis("Vertical");
 
@@ -22,15 +23,6 @@ public class PlayerMovement : MonoBehaviour
 
             controller.Move(move * speed * Time.deltaTime);
 
-            cam.enabled = true;
-            controller.enabled = true;
-        }
-        else
-        {
-            cam.enabled = false;
-            controller.enabled = false;
-        }
-          
-        
+
     }
 }

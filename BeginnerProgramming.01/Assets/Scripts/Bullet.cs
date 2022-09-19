@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour
 
     public float life = 3;
     private int damageCount = 5;
+
+    
     // Start is called before the first frame update
     void Awake()
     {
@@ -19,6 +21,7 @@ public class Bullet : MonoBehaviour
         if (collision.transform.CompareTag("Player"))
         {
             collision.transform.GetComponent<PlayerManager>().health -= damageCount;
+            GameObject.Find("TurnManager").GetComponent<TurnManager>().ChangeTurn();
             //get health script
         }
         
