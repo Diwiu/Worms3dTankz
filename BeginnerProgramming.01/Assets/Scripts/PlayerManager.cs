@@ -14,7 +14,9 @@ public class PlayerManager : MonoBehaviour
     {
         if (health <= 0)
         {
-            Destroy(this.gameObject);
+            //this.gameObject.GetComponent<MeshRenderer>().enabled = false;
+            this.gameObject.GetComponent<BoxCollider>().enabled = false;
+            this.gameObject.GetComponent<CharacterController>().enabled = false;
         }
 		//if (GameObject.Find("TurnManager").GetComponent<TurnManager>().currentPlayerIndex == myIndex)
         

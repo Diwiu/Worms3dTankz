@@ -45,13 +45,10 @@ public class PlayerTurn : MonoBehaviour
 
     
     
-    public void SwitchEnabled(bool weirdabled)
+    public void SwitchEnabled(bool enable)
     {
-        isEnabled = weirdabled;
-        cam.enabled = weirdabled;
-        //playerMovement.enabled = weirdabled;
-        //cannon.enabled = weirdabled;
-        //mouseLook.enabled = weirdabled;
-        //cam.enabled = weirdabled;
+        isEnabled = enable;
+        cam.enabled = enable;
+        
     }
 }

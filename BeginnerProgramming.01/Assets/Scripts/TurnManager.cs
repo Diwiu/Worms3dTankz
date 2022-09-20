@@ -10,6 +10,7 @@ public class TurnManager : MonoBehaviour
     private static TurnManager instance;
     [SerializeField] private List<PlayerTurn> playerTurns;
     [SerializeField] private float timeBetweenTurns;
+    public GameObject[] players;
 
     private int playerIndex;
     public float turnDelay;
@@ -23,8 +24,8 @@ public class TurnManager : MonoBehaviour
     {
 
             
-            playerIndex = playerTurns.Count - 1;
-            ChangeTurn();
+            //playerIndex = playerTurns.Count - 1;
+            //ChangeTurn();
             
             //playerOne.SwitchEnabled(false);
             //currentPlayerIndex = 1;
@@ -48,18 +49,29 @@ public class TurnManager : MonoBehaviour
     
 
    
-
+// Changes turn
     public void ChangeTurn()
     {
+        // resets timer after turn is changed
         turnDelay = 0;
-        // switches player and disables last player
+        
         if (playerIndex == playerTurns.Count - 1)
         {
             playerIndex = 0;
+            //If player is dead, change turn
+            if (players[playerIndex].GetComponent<PlayerManager>().health <= 0)
+            {
+                ChangeTurn();
+            }
         }
         else
         {
             playerIndex++;
+            //If player is dead, change turn
+            if (players[playerIndex].GetComponent<PlayerManager>().health <= 0)
+            {
+                ChangeTurn();
+            }
         }
         
         for(int i = 0; i < playerTurns.Count; i++)
@@ -74,26 +86,6 @@ public class TurnManager : MonoBehaviour
                 player.SwitchEnabled(false);
             }
         }
-
-
-
-        //currentPlayer.SwitchEnabled(false);
-        //if (currentplayer == playerone)
-        //{
-        //    debug.log("setting1");
-        //    currentplayer = playertwo;
-        //}
-        //else if (currentplayer == playertwo)
-        //{
-        //    debug.log("setting2");
-        //    currentplayer = playerone;
-        //}
-
-        //currentPlayer.SwitchEnabled(true);
-
-        //player1Movement.SetActive();
-
-
     }
     
 }
