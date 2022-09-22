@@ -23,6 +23,7 @@ public class Bullet : MonoBehaviour
             collision.transform.GetComponent<PlayerManager>().health -= damageCount;
             GameObject.Find("TurnManager").GetComponent<TurnManager>().ChangeTurn();
             
+            
             //get health script
         }
         

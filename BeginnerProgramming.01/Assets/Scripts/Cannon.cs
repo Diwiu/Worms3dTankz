@@ -8,14 +8,17 @@ public class Cannon : MonoBehaviour
     public GameObject bulletPrefab;
     public float bulletSpeed = 100;
     
+    
     [SerializeField] private int playerIndex;
 
     // Update is called once per frame
     public void Fire()
     {
-        Debug.Log("hej");
+        
         var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
             bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
         
     }
+
+    
 }
