@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 public class TurnManager : MonoBehaviour
@@ -14,7 +15,7 @@ public class TurnManager : MonoBehaviour
     [SerializeField] private float timeBetweenTurns;
     
     //Timer
-    [SerializeField] private Text countdownText;
+    [SerializeField] private TextMeshProUGUI countdownText;
     public float turnDelay;
     
     public GameObject[] players;
@@ -49,7 +50,7 @@ public class TurnManager : MonoBehaviour
     {
        
             // makes turndelay same as time.deltatime
-            turnDelay += Time.deltaTime;
+            turnDelay -= Time.deltaTime;
 
             countdownText.text = turnDelay.ToString("##");
             if (turnDelay <= 0)
@@ -58,7 +59,7 @@ public class TurnManager : MonoBehaviour
             }
 
 
-            if (turnDelay >= timeBetweenTurns)
+            if (turnDelay <= timeBetweenTurns)
             {
                 ChangeTurn();
             }
@@ -75,7 +76,7 @@ public class TurnManager : MonoBehaviour
     public void ChangeTurn()
     {
         // resets timer after turn is changed
-        turnDelay = 0;
+        turnDelay = 10;
         
         if (playerIndex == playerTurns.Count - 1)
         {
