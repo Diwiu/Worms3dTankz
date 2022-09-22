@@ -15,6 +15,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private LayerMask Mask;
     [SerializeField] private bool BouncingBullets;
     [SerializeField] private float BounceDistance = 10f;
+    
 
     private float LastShootTime;
 
@@ -39,6 +40,7 @@ public class Gun : MonoBehaviour
             }
 
             LastShootTime = Time.time;
+            
         }
     }
 

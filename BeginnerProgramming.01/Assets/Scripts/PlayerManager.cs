@@ -1,37 +1,41 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    public int health = 20;
-    // [SerializeField] private Gun Gun;
-	//public PlayerMovement pm;
-	//public Cannon cannon;
-	//public MouseLook ml;
-	//public int myIndex;
+	public int maxHealth = 20;
 
-	
-	
-	
-    private void Update()
+    public int currentHealth;
+    public HealthBar healthBar;
+    
+    
+   
+
+	private void Start()
+	{
+		currentHealth = maxHealth;
+		healthBar.SetMaxHealth(maxHealth);
+	}
+
+
+	private void Update()
     {
-	    
-	    // if (Input.GetKeyDown(KeyCode.R))
-	    // {
-		   //  Gun.Shooting();
-	    // }
-        if (health <= 0)
+	    if (currentHealth <= 0)
         {
-            //this.gameObject.GetComponent<MeshRenderer>().enabled = false;
-            //this.gameObject.GetComponent<BoxCollider>().enabled = false;
-            //this.gameObject.GetComponent<CharacterController>().enabled = false;
+            
             this.gameObject.SetActive(false);
 
         }
-		//if (GameObject.Find("TurnManager").GetComponent<TurnManager>().currentPlayerIndex == myIndex)
-        
     }
 
+    public void TakeDamage(int damage)
+    {
+	    Debug.Log("DamageTaken");
+	    currentHealth -= damage;
+	    
+	    healthBar.SetHealth(currentHealth);
+    }
 	
 }

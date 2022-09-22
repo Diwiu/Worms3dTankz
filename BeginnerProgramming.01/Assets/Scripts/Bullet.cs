@@ -20,11 +20,10 @@ public class Bullet : MonoBehaviour
 
         if (collision.transform.CompareTag("Player"))
         {
-            collision.transform.GetComponent<PlayerManager>().health -= damageCount;
+            Debug.Log("Collision");
+            collision.transform.GetComponent<PlayerManager>().TakeDamage(damageCount);
             GameObject.Find("TurnManager").GetComponent<TurnManager>().ChangeTurn();
             
-            
-            //get health script
         }
         
     }

@@ -82,7 +82,7 @@ public class TurnManager : MonoBehaviour
         {
             playerIndex = 0;
             //If player is dead, change turn
-            if (players[playerIndex].GetComponent<PlayerManager>().health <= 0)
+            if (players[playerIndex].GetComponent<PlayerManager>().currentHealth <= 0)
             {
                 ChangeTurn();
             }
@@ -91,7 +91,7 @@ public class TurnManager : MonoBehaviour
         {
             playerIndex++;
             //If player is dead, change turn
-            if (players[playerIndex].GetComponent<PlayerManager>().health <= 0)
+            if (players[playerIndex].GetComponent<PlayerManager>().currentHealth <= 0)
             {
                 ChangeTurn();
             }
