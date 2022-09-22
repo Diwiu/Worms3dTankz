@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class TurnManager : MonoBehaviour
 {
@@ -10,17 +12,24 @@ public class TurnManager : MonoBehaviour
     private static TurnManager instance;
     [SerializeField] private List<PlayerTurn> playerTurns;
     [SerializeField] private float timeBetweenTurns;
-    public GameObject[] players;
-
-    private int playerIndex;
+    
+    //Timer
+    [SerializeField] private Text countdownText;
     public float turnDelay;
+    
+    public GameObject[] players;
+    private int playerIndex;
+    
     
 
     //public int currentPlayerIndex;
    // [SerializeField] private GameObject player1;
   //  private PlayerMovement player1Movement;
 
-    private void Awake()
+
+  
+
+  private void Awake()
     {
 
             
@@ -39,13 +48,26 @@ public class TurnManager : MonoBehaviour
     private void Update()
     {
        
+            // makes turndelay same as time.deltatime
             turnDelay += Time.deltaTime;
+
+            countdownText.text = turnDelay.ToString("##");
+            if (turnDelay <= 0)
+            {
+                turnDelay = 0;
+            }
+
+
             if (turnDelay >= timeBetweenTurns)
             {
                 ChangeTurn();
             }
         
     }
+
+
+ 
+
     
 
    

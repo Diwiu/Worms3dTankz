@@ -14,6 +14,7 @@ public class PlayerTurn : MonoBehaviour
     // enable / disable on inspector
     
     public bool isEnabled;
+    [SerializeField] private Gun Gun;
 
 
     public void Awake()
@@ -34,6 +35,11 @@ public class PlayerTurn : MonoBehaviour
             {
                 cannon.Fire();
                 
+            }
+
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Gun.Shooting();
             }
             playerMovement.movement();
             mouseLook.mouse();

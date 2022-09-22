@@ -94,6 +94,8 @@ public class Gun : MonoBehaviour
         }
         
         Destroy(Trail.gameObject, Trail.time);
+        
+
     }
     
 }

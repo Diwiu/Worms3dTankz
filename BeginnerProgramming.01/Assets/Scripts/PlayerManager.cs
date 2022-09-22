@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     public int health = 20;
-    [SerializeField] private Gun Gun;
+    // [SerializeField] private Gun Gun;
 	//public PlayerMovement pm;
 	//public Cannon cannon;
 	//public MouseLook ml;
@@ -17,10 +17,10 @@ public class PlayerManager : MonoBehaviour
     private void Update()
     {
 	    
-	    if (Input.GetKeyDown(KeyCode.R))
-	    {
-		    Gun.Shooting();
-	    }
+	    // if (Input.GetKeyDown(KeyCode.R))
+	    // {
+		   //  Gun.Shooting();
+	    // }
         if (health <= 0)
         {
             //this.gameObject.GetComponent<MeshRenderer>().enabled = false;
