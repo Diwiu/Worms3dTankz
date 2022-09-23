@@ -34,14 +34,16 @@ public class Gun : MonoBehaviour
             {
                 StartCoroutine(SpawnTrail(trail, hit.point, hit.normal, BounceDistance, true));
             }
+            // this makes it shoot even if our raycast doesnt hit something
             else
             {
                 StartCoroutine(SpawnTrail(trail, direction * 100, Vector3.zero, BounceDistance, false));
             }
 
             LastShootTime = Time.time;
-            
+            //Destroy(trail.gameObject, trail.time);
         }
+        
     }
 
 
@@ -95,7 +97,8 @@ public class Gun : MonoBehaviour
             }
         }
         
-        Destroy(Trail.gameObject, Trail.time);
+        Destroy(Trail.gameObject);
+        
         
 
     }

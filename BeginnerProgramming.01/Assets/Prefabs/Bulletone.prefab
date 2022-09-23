@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 8920766382601648329}
   - component: {fileID: 6085124323670941980}
   - component: {fileID: 7115865449991224461}
-  - component: {fileID: 2387581576178112498}
   - component: {fileID: 239436586210786405}
+  - component: {fileID: 8348180053254867896}
   m_Layer: 0
   m_Name: Bulletone
   m_TagString: Untagged
@@ -115,20 +115,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
---- !u!114 &2387581576178112498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4934387548079032712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc7c013973d6d254eba1e8558e08d84b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  life: 3
+  m_CollisionDetection: 2
 --- !u!96 &239436586210786405
 TrailRenderer:
   serializedVersion: 2
@@ -171,7 +158,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 2
+  m_Time: 10
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.2
@@ -237,3 +224,15 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &8348180053254867896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4934387548079032712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c07badfed607112488e17613ccbe5ea3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
