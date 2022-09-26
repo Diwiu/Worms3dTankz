@@ -16,7 +16,7 @@ public class BouncingBullet : MonoBehaviour
         {
             Debug.Log("Collision");
             collision.transform.GetComponent<PlayerManager>().TakeDamage(damageCount);
-            GameObject.Find("TurnManager").GetComponent<TurnManager>().ChangeTurn();
+            
             
         }
         

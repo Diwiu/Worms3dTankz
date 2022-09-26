@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 6085124323670941980}
   - component: {fileID: 7115865449991224461}
   - component: {fileID: 239436586210786405}
-  - component: {fileID: 8348180053254867896}
-  m_Layer: 0
+  - component: {fileID: -2850311586258379915}
+  m_Layer: 1
   m_Name: Bulletone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!114 &8348180053254867896
+--- !u!114 &-2850311586258379915
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -13,6 +13,7 @@ public class TurnManager : MonoBehaviour
     private static TurnManager instance;
     [SerializeField] private List<PlayerTurn> playerTurns;
     [SerializeField] private float timeBetweenTurns;
+    public Turnstatus currentStatus;
     
     //Timer
     [SerializeField] private TextMeshProUGUI countdownText;
@@ -32,8 +33,8 @@ public class TurnManager : MonoBehaviour
 
   private void Awake()
     {
+        currentStatus = Turnstatus.playerturn;
 
-            
             //playerIndex = playerTurns.Count - 1;
             //ChangeTurn();
             
@@ -48,25 +49,31 @@ public class TurnManager : MonoBehaviour
 
     private void Update()
     {
-       
-            // makes turndelay same as time.deltatime
-            turnDelay -= Time.deltaTime;
+        turnDelay -= Time.deltaTime;
 
-            countdownText.text = turnDelay.ToString("##");
-            if (turnDelay <= 0)
-            {
-                turnDelay = 0;
-            }
+        countdownText.text = turnDelay.ToString("##");
+        if (turnDelay <= 0)
+        {
+            turnDelay = 0;
+        }
 
 
-            if (turnDelay <= timeBetweenTurns)
-            {
-                ChangeTurn();
-            }
-        
+        if (turnDelay <= timeBetweenTurns)
+        {
+            SetTurnStatus();
+            SetTurnDelay();
+        }
+
+
+
+
+
+        // makes turndelay same as time.deltatime
+
+
     }
 
-
+   
  
 
     
@@ -76,7 +83,6 @@ public class TurnManager : MonoBehaviour
     public void ChangeTurn()
     {
         // resets timer after turn is changed
-        turnDelay = 10;
         
         if (playerIndex == playerTurns.Count - 1)
         {
@@ -96,18 +102,51 @@ public class TurnManager : MonoBehaviour
                 ChangeTurn();
             }
         }
-        
-        for(int i = 0; i < playerTurns.Count; i++)
+
+        //for(int i = 0; i < playerTurns.Count; i++)
+        //{
+        //    var player = playerTurns[i];
+        //    if(i == playerIndex)
+        //    {
+        //        player.SwitchEnabled(true);
+        //    }
+        //    else
+        //    {
+        //        player.SwitchEnabled(false);
+        //    }
+        //}
+
+       
+
+
+    }
+
+    public void SetTurnDelay()
+    {
+        if (currentStatus == Turnstatus.countdown)
         {
-            var player = playerTurns[i];
-            if(i == playerIndex)
-            {
-                player.SwitchEnabled(true);
-            }
-            else
-            {
-                player.SwitchEnabled(false);
-            }
+            turnDelay = 3;
+            
+        }
+        else
+        {
+            turnDelay = 10;
+        }
+    }
+
+    public void SetTurnStatus()
+    {
+        if (currentStatus == Turnstatus.countdown)
+        {
+            currentStatus = Turnstatus.playerturn;
+            playerTurns[playerIndex].SwitchEnabled(true, true);
+        }
+        else
+        {
+            playerTurns[playerIndex].SwitchEnabled(false, false);
+            ChangeTurn();
+            playerTurns[playerIndex].SwitchEnabled(false, true);
+            currentStatus = Turnstatus.countdown;
         }
     }
     

@@ -51,10 +51,10 @@ public class PlayerTurn : MonoBehaviour
 
     
     
-    public void SwitchEnabled(bool enable)
+    public void SwitchEnabled(bool enableMovement, bool enableCamera)
     {
-        isEnabled = enable;
-        cam.enabled = enable;
+        isEnabled = enableMovement;
+        cam.enabled = enableCamera;
         
     }
 }

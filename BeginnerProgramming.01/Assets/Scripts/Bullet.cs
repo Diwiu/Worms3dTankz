@@ -22,7 +22,6 @@ public class Bullet : MonoBehaviour
         {
             Debug.Log("Collision");
             collision.transform.GetComponent<PlayerManager>().TakeDamage(damageCount);
-            GameObject.Find("TurnManager").GetComponent<TurnManager>().ChangeTurn();
             Destroy(gameObject);
         }
         Destroy(gameObject, life);

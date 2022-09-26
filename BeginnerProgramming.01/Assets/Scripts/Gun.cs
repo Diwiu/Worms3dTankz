@@ -55,6 +55,7 @@ public class Gun : MonoBehaviour
 
         float distance = Vector3.Distance(Trail.transform.position, Hitpoint);
         float startingDistance = distance;
+        
 
         while (distance > 0)
         {

@@ -1425,7 +1425,8 @@ MonoBehaviour:
   - {fileID: 1868709899}
   - {fileID: 1908341676}
   - {fileID: 670797078}
-  timeBetweenTurns: 1
+  timeBetweenTurns: 0
+  currentStatus: 0
   countdownText: {fileID: 1636211810}
   turnDelay: 10
   players:
@@ -2842,6 +2843,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTurns: []
   timeBetweenTurns: 0
+  currentStatus: 0
   countdownText: {fileID: 1636211810}
   turnDelay: 0
   players: []
@@ -5900,7 +5902,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -125, y: -125}
+  m_AnchoredPosition: {x: -125, y: -125.000015}
   m_SizeDelta: {x: 240, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1277708121
@@ -6702,7 +6704,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26690
+  m_Name: pb_Mesh41094
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
