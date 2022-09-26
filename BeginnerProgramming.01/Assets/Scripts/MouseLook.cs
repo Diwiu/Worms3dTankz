@@ -12,6 +12,10 @@ public class MouseLook : MonoBehaviour
     public Vector3 deltaMove;
     public float speed = 1;
     [SerializeField] private int playerIndex;
+
+   
+    
+    
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
