@@ -6,7 +6,7 @@ public class BouncingBullet : MonoBehaviour
 {
     
     
-    private int damageCount = 5;
+    public int damageCount = 1;
     
     
     void OnCollisionEnter(Collision collision)
