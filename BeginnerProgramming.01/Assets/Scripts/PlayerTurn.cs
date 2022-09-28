@@ -7,10 +7,12 @@ public class PlayerTurn : MonoBehaviour
 {
     // get stuff from other scripts
     
-    private PlayerMovement playerMovement;
+    //private PlayerMovement playerMovement;
     private Cannon cannon;
     private MouseLook mouseLook;
     private Camera cam;
+    private CharacterMovement _playerMovement;
+    
     // enable / disable on inspector
     
     public bool isEnabled;
@@ -22,8 +24,10 @@ public class PlayerTurn : MonoBehaviour
         Debug.Log("Im Awake: "+ isEnabled);
         cannon = GetComponentInChildren<Cannon>();
         mouseLook = GetComponentInChildren<MouseLook>();
-        playerMovement = GetComponent<PlayerMovement>();
+        //playerMovement = GetComponent<PlayerMovement>();
         cam = GetComponentInChildren<Camera>();
+        _playerMovement = GetComponent<CharacterMovement>();
+
 
     }
 
@@ -41,8 +45,10 @@ public class PlayerTurn : MonoBehaviour
             {
                 Gun.Shooting();
             }
-            playerMovement.movement();
+            //playerMovement.movement();
             mouseLook.mouse();
+            _playerMovement.MovePlayer();
+
         }
         
         
