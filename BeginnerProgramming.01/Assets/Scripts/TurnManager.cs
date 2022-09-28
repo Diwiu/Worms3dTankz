@@ -64,6 +64,8 @@ public class TurnManager : MonoBehaviour
             SetTurnDelay();
         }
 
+        
+
 
 
 
