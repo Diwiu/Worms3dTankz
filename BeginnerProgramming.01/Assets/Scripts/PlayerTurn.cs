@@ -13,6 +13,7 @@ public class PlayerTurn : MonoBehaviour
     private Camera cam;
     private CharacterMovement _playerMovement;
     
+    
     // enable / disable on inspector
     
     public bool isEnabled;
@@ -27,8 +28,6 @@ public class PlayerTurn : MonoBehaviour
         //playerMovement = GetComponent<PlayerMovement>();
         cam = GetComponentInChildren<Camera>();
         _playerMovement = GetComponent<CharacterMovement>();
-
-
     }
 
     private void Update()
@@ -44,6 +43,11 @@ public class PlayerTurn : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.R))
             {
                 Gun.Shooting();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                _playerMovement.Jump();
             }
             //playerMovement.movement();
             mouseLook.mouse();

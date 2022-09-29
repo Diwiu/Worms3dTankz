@@ -14,7 +14,7 @@ public class TurnManager : MonoBehaviour
     [SerializeField] private List<PlayerTurn> playerTurns;
     [SerializeField] private float timeBetweenTurns;
     public Turnstatus currentStatus;
-    
+
     //Timer
     [SerializeField] private TextMeshProUGUI countdownText;
     public float turnDelay;
@@ -23,28 +23,9 @@ public class TurnManager : MonoBehaviour
     private int playerIndex;
     
     
-
-    //public int currentPlayerIndex;
-   // [SerializeField] private GameObject player1;
-  //  private PlayerMovement player1Movement;
-
-
-  
-
   private void Awake()
     {
         currentStatus = Turnstatus.playerturn;
-
-            //playerIndex = playerTurns.Count - 1;
-            //ChangeTurn();
-            
-            //playerOne.SwitchEnabled(false);
-            //currentPlayerIndex = 1;
-        
-
-        //player1Movement = player1.GetComponent<PlayerMovement>().SetActive();
-        
-
     }
 
     private void Update()
@@ -64,19 +45,7 @@ public class TurnManager : MonoBehaviour
             SetTurnDelay();
         }
 
-        
-
-
-
-
-
-        // makes turndelay same as time.deltatime
-
-
     }
-
-   
- 
 
     
 
@@ -104,23 +73,6 @@ public class TurnManager : MonoBehaviour
                 ChangeTurn();
             }
         }
-
-        //for(int i = 0; i < playerTurns.Count; i++)
-        //{
-        //    var player = playerTurns[i];
-        //    if(i == playerIndex)
-        //    {
-        //        player.SwitchEnabled(true);
-        //    }
-        //    else
-        //    {
-        //        player.SwitchEnabled(false);
-        //    }
-        //}
-
-       
-
-
     }
 
     public void SetTurnDelay()
@@ -151,5 +103,6 @@ public class TurnManager : MonoBehaviour
             currentStatus = Turnstatus.countdown;
         }
     }
+    
     
 }

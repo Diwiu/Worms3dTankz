@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 2afe0b33774e8b74aa33be774e7f20bc
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Therace
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 045f557539a4c43408a844f6ea57d3f7, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -19,10 +19,10 @@ public class CharacterMovement : MonoBehaviour
         
     }
 
-    private void Update()
+    public void Update()
     {
         PlayerMovementInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
-
+        
         
         
     }
@@ -32,5 +32,10 @@ public class CharacterMovement : MonoBehaviour
         //Calculate movement dir
         Vector3 MoveVector = transform.TransformDirection(PlayerMovementInput) * Speed;
         PlayerBody.velocity = new Vector3(MoveVector.x, PlayerBody.velocity.y, MoveVector.z);
+    }
+
+    public void Jump()
+    {
+        PlayerBody.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
     }
 }
