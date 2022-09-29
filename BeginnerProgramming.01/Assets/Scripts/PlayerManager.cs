@@ -10,6 +10,7 @@ public class PlayerManager : MonoBehaviour
 
     public int currentHealth;
     public HealthBar healthBar;
+    private TurnManager _turnManager;
     
     
    
@@ -18,6 +19,7 @@ public class PlayerManager : MonoBehaviour
 	{
 		currentHealth = maxHealth;
 		healthBar.SetMaxHealth(maxHealth);
+		_turnManager = FindObjectOfType<TurnManager>();
 	}
 
 
@@ -27,7 +29,7 @@ public class PlayerManager : MonoBehaviour
         {
             
             this.gameObject.SetActive(false);
-
+			_turnManager.playerDied();
         }
     }
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 public class TurnManager : MonoBehaviour
@@ -21,11 +22,15 @@ public class TurnManager : MonoBehaviour
     
     public GameObject[] players;
     private int playerIndex;
+    // int to keep track of players alive for the win screen
+    private int playersAlive;
     
     
   private void Awake()
     {
         currentStatus = Turnstatus.playerturn;
+        //Gives the count to the players alive
+        playersAlive = playerTurns.Count;
     }
 
     private void Update()
@@ -47,13 +52,21 @@ public class TurnManager : MonoBehaviour
 
     }
 
-    
+    public void playerDied()
+    {
+        playersAlive--;
+        if (playersAlive == 1)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
+    }
 
    
 // Changes turn
     public void ChangeTurn()
     {
         // resets timer after turn is changed
+      
         
         if (playerIndex == playerTurns.Count - 1)
         {

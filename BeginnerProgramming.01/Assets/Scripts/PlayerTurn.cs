@@ -32,7 +32,7 @@ public class PlayerTurn : MonoBehaviour
 
     private void Update()
     {
-        if(isEnabled == true)
+        if(isEnabled)
         {
             if (Input.GetKeyDown(KeyCode.G))
             {
