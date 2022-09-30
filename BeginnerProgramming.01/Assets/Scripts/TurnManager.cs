@@ -55,6 +55,7 @@ public class TurnManager : MonoBehaviour
     public void playerDied()
     {
         playersAlive--;
+        Debug.Log("Playersalive--");
         if (playersAlive == 1)
         {
             SceneManager.LoadScene("GameOver");
