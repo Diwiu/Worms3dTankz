@@ -6,7 +6,4 @@ public enum Turnstatus
 {
    playerturn,
    countdown,
-
-
-
 }

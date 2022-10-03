@@ -11,7 +11,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private ParticleSystem ImpactParticleSystem;
     [SerializeField] private TrailRenderer BulletTrail;
     [SerializeField] private float ShootDelay = 0.1f;
-    [SerializeField] private float Speed = 100;
+    [SerializeField] private float Speed = 50;
     [SerializeField] private LayerMask Mask;
     [SerializeField] private bool BouncingBullets;
     [SerializeField] private float BounceDistance = 10f;
@@ -22,12 +22,11 @@ public class Gun : MonoBehaviour
     public void Shooting()
     {
         
-        Debug.Log("Shot");
         if (LastShootTime + ShootDelay < Time.time)
         {
             ShootingSystem.Play();
 
-            Vector3 direction = transform.forward;
+            Vector3 direction = transform.forward * Time.deltaTime;
             TrailRenderer trail = Instantiate(BulletTrail, BulletSpawnPoint.position, quaternion.identity);
 
             if (Physics.Raycast(BulletSpawnPoint.position, direction, out RaycastHit hit, float.MaxValue, Mask))

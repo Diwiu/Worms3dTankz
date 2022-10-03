@@ -7,6 +7,8 @@ public class Cannon : MonoBehaviour
     public Transform bulletSpawnPoint;
     public GameObject bulletPrefab;
     public float bulletSpeed = 100;
+
+    
     
     
     [SerializeField] private int playerIndex;
@@ -15,7 +17,7 @@ public class Cannon : MonoBehaviour
     public void Fire()
     {
         
-        var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+            var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
             bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
         
     }

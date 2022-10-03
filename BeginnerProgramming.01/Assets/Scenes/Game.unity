@@ -1208,7 +1208,7 @@ MonoBehaviour:
   ImpactParticleSystem: {fileID: 19800008, guid: 7075bd5fe1480184695a32611c15da57, type: 3}
   BulletTrail: {fileID: 239436586210786405, guid: 54828df315be9b14187b5059ffc03e35, type: 3}
   ShootDelay: 0.1
-  Speed: 100
+  Speed: 50
   Mask:
     serializedVersion: 2
     m_Bits: 1
@@ -1220,7 +1220,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26860
+  m_Name: pb_Mesh28186
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2353,7 +2353,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh27168
+  m_Name: pb_Mesh28524
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2517,7 +2517,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh27154
+  m_Name: pb_Mesh28510
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3339,8 +3339,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1047451, y: 1.5323249, z: 1}
-  m_Center: {x: 0.01386723, y: 0.26616302, z: -6.8580724e-11}
+  m_Size: {x: 1.1047451, y: 1.5323248, z: 1.0338987}
+  m_Center: {x: 0.01386723, y: 0.26616302, z: -0.0028298574}
 --- !u!23 &670797084
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3682,8 +3682,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.09, y: 1.515481, z: 1}
-  m_Center: {x: 0, y: 0.2577408, z: 0}
+  m_Size: {x: 1.09, y: 1.515481, z: 1.0138297}
+  m_Center: {x: -7.730881e-11, y: 0.2577408, z: 0.002581715}
 --- !u!23 &757058209
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4162,7 +4162,6 @@ GameObject:
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
   - component: {fileID: 963194230}
-  - component: {fileID: 963194231}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4314,21 +4313,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!114 &963194231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3fcf2e48c2c51541a9886c9a79052c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 757058211}
-  smoothSpeed: 0.125
-  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &977830917
 GameObject:
   m_ObjectHideFlags: 0
@@ -4964,7 +4948,7 @@ MonoBehaviour:
   ImpactParticleSystem: {fileID: 19800008, guid: 7075bd5fe1480184695a32611c15da57, type: 3}
   BulletTrail: {fileID: 239436586210786405, guid: 54828df315be9b14187b5059ffc03e35, type: 3}
   ShootDelay: 0.1
-  Speed: 100
+  Speed: 50
   Mask:
     serializedVersion: 2
     m_Bits: 1
@@ -9153,7 +9137,7 @@ MonoBehaviour:
   ImpactParticleSystem: {fileID: 19800008, guid: 7075bd5fe1480184695a32611c15da57, type: 3}
   BulletTrail: {fileID: 239436586210786405, guid: 54828df315be9b14187b5059ffc03e35, type: 3}
   ShootDelay: 0.1
-  Speed: 100
+  Speed: 50
   Mask:
     serializedVersion: 2
     m_Bits: 1
@@ -10535,8 +10519,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1047451, y: 1.5323249, z: 1}
-  m_Center: {x: 0.01386723, y: 0.26616302, z: -6.8580724e-11}
+  m_Size: {x: 1.1047451, y: 1.5323248, z: 1.0239936}
+  m_Center: {x: 0.013867229, y: 0.26616302, z: 0.0042223567}
 --- !u!23 &1868709895
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10767,7 +10751,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26798
+  m_Name: pb_Mesh28138
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11023,8 +11007,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1047451, y: 1.5323249, z: 1}
-  m_Center: {x: 0.01386723, y: 0.26616302, z: -6.8580724e-11}
+  m_Size: {x: 1.1047451, y: 1.5323248, z: 1.0155389}
+  m_Center: {x: 0.013867228, y: 0.2661629, z: 0.0014713277}
 --- !u!23 &1908341682
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14192,7 +14176,7 @@ MonoBehaviour:
   ImpactParticleSystem: {fileID: 19800008, guid: 7075bd5fe1480184695a32611c15da57, type: 3}
   BulletTrail: {fileID: 239436586210786405, guid: 54828df315be9b14187b5059ffc03e35, type: 3}
   ShootDelay: 0.1
-  Speed: 100
+  Speed: 50
   Mask:
     serializedVersion: 2
     m_Bits: 1

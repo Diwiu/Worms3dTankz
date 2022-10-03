@@ -13,6 +13,9 @@ public class PlayerTurn : MonoBehaviour
     private Camera cam;
     private CharacterMovement _playerMovement;
     
+    private float fireRate = 1f;
+    private float nextFire = 0f;
+    
     
     // enable / disable on inspector
     
@@ -40,8 +43,9 @@ public class PlayerTurn : MonoBehaviour
                 
             }
 
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.R) && Time.time > nextFire)
             {
+                nextFire = Time.time + fireRate;
                 Gun.Shooting();
             }
 
