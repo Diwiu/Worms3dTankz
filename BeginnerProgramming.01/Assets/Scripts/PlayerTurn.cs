@@ -43,6 +43,12 @@ public class PlayerTurn : MonoBehaviour
                 
             }
 
+            if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time > nextFire)
+            {
+                nextFire = Time.time + fireRate;
+                Gun.Shooting();
+            }
+            
             if (Input.GetKeyDown(KeyCode.R) && Time.time > nextFire)
             {
                 nextFire = Time.time + fireRate;

@@ -38,9 +38,11 @@ public class TurnManager : MonoBehaviour
         turnDelay -= Time.deltaTime;
 
         countdownText.text = turnDelay.ToString("##");
+        
         if (turnDelay <= 0)
         {
             turnDelay = 0;
+            countdownText.color = Color.white;
         }
 
 
@@ -48,6 +50,7 @@ public class TurnManager : MonoBehaviour
         {
             SetTurnStatus();
             SetTurnDelay();
+            
         }
 
     }
@@ -55,10 +58,12 @@ public class TurnManager : MonoBehaviour
     public void playerDied()
     {
         playersAlive--;
-        Debug.Log("Playersalive--");
         if (playersAlive == 1)
         {
             SceneManager.LoadScene("GameOver");
+            Time.timeScale = 1f;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 
@@ -67,8 +72,7 @@ public class TurnManager : MonoBehaviour
     public void ChangeTurn()
     {
         // resets timer after turn is changed
-      
-        
+
         if (playerIndex == playerTurns.Count - 1)
         {
             playerIndex = 0;
@@ -93,7 +97,8 @@ public class TurnManager : MonoBehaviour
     {
         if (currentStatus == Turnstatus.countdown)
         {
-            turnDelay = 3;
+            turnDelay = 5;
+            
             
         }
         else
@@ -115,6 +120,7 @@ public class TurnManager : MonoBehaviour
             ChangeTurn();
             playerTurns[playerIndex].SwitchEnabled(false, true);
             currentStatus = Turnstatus.countdown;
+            countdownText.color = Color.red;
         }
     }
     
